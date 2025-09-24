@@ -1,34 +1,88 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background: #f4f4f4;
+    margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .container {
     background: white;
-    padding: 20px 30px;
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    max-width: 900px;
+    width: 100%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-input[type="file"] {
-    margin: 20px 0;
-}
-
-button {
-    padding: 10px 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .upload-section {
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  #dropZone {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .controls,
+  .text-fields,
+  .download,
+  .advanced-controls {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .controls label,
+  .text-fields input,
+  .download select,
+  .advanced-controls select {
+    margin: 5px;
+  }
+  
+  button {
+    padding: 8px 15px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-}
-
-button:disabled {
+  }
+  
+  button:disabled {
     background-color: #aaa;
     cursor: not-allowed;
-}
+  }
+  
+  canvas {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  .advanced-controls {
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .advanced-controls h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
