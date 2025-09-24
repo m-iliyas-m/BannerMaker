@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Banner  Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Maker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Image Banner Generator</h1>
-        <input type="file" id="imageUpload" accept="image/*">
-        <canvas id="canvas" style="display:none;"></canvas>
-        <button id="downloadBtn" disabled>Download Image</button>
+  <div class="container">
+    <h1>Banner Maker</h1>
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+      <label>Upload Product Image: <input type="file" id="imageUpload" accept="image/*"></label>
+      <label>Upload Logo: <input type="file" id="logoUpload" accept="image/*"></label>
+      <div id="dropZone">Drag & Drop Product Image Here</div>
     </div>
-    <script src="scripts.js"></script>
+
+    <!-- Controls -->
+    <div class="controls">
+      <label>Banner Color: <input type="color" id="bannerColor" value="#007bff"></label>
+      <label>Banner Height (%): <input type="range" id="bannerHeight" min="3" max="20" value="5"></label>
+      <label>Zoom: <input type="range" id="zoom" min="1" max="3" step="0.1" value="1"></label>
+      <button id="rotateBtn">Rotate 90°</button>
+      <button id="flipBtn">Flip</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <!-- Text Fields -->
+    <div class="text-fields">
+      <input type="text" id="brandName" placeholder="Brand Name">
+      <input type="text" id="tagline" placeholder="Tagline">
+      <input type="text" id="contact" placeholder="Enquiry No.">
+      <label><input type="checkbox" id="watermark"> Add Watermark</label>
+    </div>
+
+    <!-- Advanced Ecom Features -->
+    <div class="advanced-controls">
+      <h3>Templates & E-Com Features</h3>
+      <label>Canvas Size: 
+        <select id="canvasSize">
+          <option value="1:1">Instagram Post (1:1)</option>
+          <option value="4:5">Portrait (4:5)</option>
+          <option value="9:16">Story/Reel Cover (9:16)</option>
+        </select>
+      </label>
+
+      <label>Banner Layout:
+        <select id="bannerLayout">
+          <option value="bottom">Bottom Bar</option>
+          <option value="top">Top Bar</option>
+          <option value="side">Side Bar</option>
+          <option value="none">No Banner</option>
+        </select>
+      </label>
+
+      <label>Sticker:
+        <select id="sticker">
+          <option value="">None</option>
+          <option value="sale">SALE</option>
+          <option value="discount">50% OFF</option>
+          <option value="new">NEW ARRIVAL</option>
+        </select>
+      </label>
+
+      <label>CTA Button:
+        <select id="cta">
+          <option value="">None</option>
+          <option value="shop">Shop Now</option>
+          <option value="dm">DM to Buy</option>
+          <option value="swipe">Swipe Up</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Canvas Preview -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Download Options -->
+    <div class="download">
+      <select id="fileType">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="webp">WebP</option>
+      </select>
+      <button id="downloadBtn" disabled>Download</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
